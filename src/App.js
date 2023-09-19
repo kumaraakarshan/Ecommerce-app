@@ -1,15 +1,26 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import Header from './Components/Header';
-import ProductList from './Components/ProductList/ProductList';
+import { Fragment,useState } from "react";
+import Header from "./Components/Layout/Header/Header";
+import Body from "./Components/Layout/Body/body";
+import Footer from "./Components/Layout/Footer/Footer";
+import Cart from "./Components/Cart/Cart";
 
 function App() {
+  const[cartIsShown,setCartIsShown]=useState(false)
+
+  const ShowCartHandler=()=>{
+    setCartIsShown(true)
+  }
+
+  const HideCartHandler=()=>{
+    setCartIsShown(false)
+  }
   return (
-    <div className="App">
-      <Header />
-      <ProductList />
-      {/* Other content of your application */}
-    </div>
+    <Fragment>
+     { cartIsShown && <Cart onClose={HideCartHandler}/>}
+      <Header onShowCart={ShowCartHandler}/>
+      <Body/>
+      <Footer/>
+    </Fragment>
   );
 }
 
