@@ -1,9 +1,15 @@
-
-import './App.css';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import Header from './Components/Header';
+import ProductList from './Components/ProductList/ProductList';
 
 function App() {
   return (
-  <h1>hello</h1>
+    <div className="App">
+      <Header />
+      <ProductList />
+      {/* Other content of your application */}
+    </div>
   );
 }
 
