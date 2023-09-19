@@ -7,4 +7,14 @@
   border-radius: 25px;
   font-weight: bold;
   display: flex;
+  border: 2px solid #56ccf2;
+  padding-right: 11px;
+}
+
+.badge {
+  position: absolute;
+  color: #56ccf2;
+  font-size: 20px;
+  top: -3px;
+  right: 4px;
 }

@@ -1,87 +1,75 @@
-.cart{
-    margin: 20px 0px;
-    padding: 0;
-    font-family: "Metal Mania";
-    text-align: center;
-    font-size: 30px;
+.cart {
+  margin: 20px 0px;
+  padding: 0;
+  font-family: "Metal Mania";
+  text-align: center;
+  font-size: 30px;
 }
 .cart-items {
-    
-    list-style: none;
-    margin: 1%;
-    padding: 10%;
-    max-height: 20rem;
-    overflow: auto;
-    word-spacing: normal;
-
-  }
-
-.img {
-    max-width: 5%;
-    border-radius: 10%;
-    margin-left: 84px;
-    margin-right: 21px;
+  list-style: none;
+  margin: 1%;
+  padding: 10%;
+  max-height: 20rem;
+  overflow: auto;
+  word-spacing: normal;
 }
 
+.img {
+  max-width: 5%;
+  border-radius: 10%;
+  margin-left: 84px;
+  margin-right: 21px;
+}
 
 .section {
-    text-align: center;
-    
+  text-align: center;
 }
 
 .div {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 2rem;
 }
 
-.span{
-    margin-left: 7rem;
-    border-bottom: 1px solid black;
-  
-    
+.span {
+  margin-left: 7rem;
+  border-bottom: 1px solid black;
 }
 
 .cart-items {
-   
-    
-    width: 100%;
-    align-items: center;
-    padding: 0 30%;
-    font-size: 20px;
+  width: 100%;
+  align-items: center;
+  padding: 0 30%;
+  font-size: 20px;
 }
 
-.h2{
-    align-items: flex-end;
-    text-align: end;
+.h2 {
+  align-items: flex-end;
+  text-align: end;
 }
 
 .button {
-    text-align: end;
-    align-items: flex-end;
-    background-color: red;
-    color: white;
-    float: right;
-    
+  text-align: end;
+  align-items: flex-end;
+  background-color: red;
+  color: white;
+  float: right;
 }
 
-.remove{
-    color: white;
-    background-color: rgb(22, 19, 19);
-   cursor: pointer;
+.remove {
+  color: white;
+  background-color: rgb(22, 19, 19);
+  cursor: pointer;
 }
 
-.price-span{
-    margin: 0 183px 0px 65px;
-
+.price-span {
+  margin: 0 183px 0px 65px;
 }
-.title{
-    box-sizing: border-box;
+.title {
+  box-sizing: border-box;
 }
 
-.cancel{
-    
-        color: white;
-        background-color: red;
-    
+.cancel {
+  color: white;
+  background-color: red;
 }
