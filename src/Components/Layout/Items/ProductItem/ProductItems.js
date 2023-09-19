@@ -20,11 +20,13 @@ const ProductItems = (props) => {
   return (
     <Fragment>
     <div className={classes.Items}>
+      
       <h3>{props.title}</h3>
+      <Link to="/product/p3">
       <img src={props.image} alt="some images"></img>
       <div className={classes.price}>Rs. {props.price}</div>
       <button className={classes.button} onClick={addItemToCart}>Add To cart</button>
-     
+      </Link>
     </div>
 
     

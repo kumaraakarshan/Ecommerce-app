@@ -1,40 +1,52 @@
-import { Card, Col, Container, Row } from "react-bootstrap";
-
+import React from 'react';
 import image from "../Images/download.jfif";
+import classes from './AboutUs.module.css';
 
-
-const AboutUs = () => {
+const About = () => {
   return (
-    <Container style={{ marginTop: "3rem" }}  fluid='md' >
-      <Row className="justify-content-md-center">
-        <Col sm={8}>
-          <Card.Title style={{ textAlign: " center" }}>ABOUT</Card.Title>
-          <Card.Body className="shadow-lg">
-            <Card.Img variant="top" src={image}  style={{ textAlign: " center" }} />
-            <Card.Text>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste
-              ipsam asperiores eos at? Laudantium quod voluptatibus esse
-              repudiandae accusantium ex distinctio error consequuntur corporis
-              iure quo, sed officia consequatur voluptas. Fuga similique amet
-              voluptatibus ratione nesciunt tempore error velit, inventore magni
-              molestias iste mollitia aliquid soluta eaque quisquam quis aperiam
-              eum quaerat ut quasi quas. Deserunt doloribus deleniti dolorum
-              facere soluta praesentium, ullam maxime eum repellat minus
-              voluptas, eligendi, nulla fugit numquam. Quos ullam fuga iusto
-              sint atque, qui quas eius minus, eos commodi quae aspernatur
-              accusamus vero quo? Quasi provident necessitatibus soluta dolor
-              labore? Fugiat dolores illo temporibus? Accusamus nesciunt
-              dignissimos at tempora soluta a. Atque eaque suscipit hic tempore
-              officiis culpa ea provident tempora ipsa, non aliquid maiores
-              praesentium iusto necessitatibus placeat quasi. Labore earum
-              ipsum, ipsam consectetur, illum sed laboriosam iusto, veritatis
-              modi rerum optio dignissimos dicta. Pariatur porro adipisci animi
-              aliquid perspiciatis assumenda quos aperiam consequatur.
-            </Card.Text>
-          </Card.Body>
-        </Col>
-      </Row>
-    </Container>
+    <section className={classes.section}>
+      
+      <h2>ABOUT</h2>
+      <div>
+        <img
+          src={image}
+          alt='Musical Band'
+        />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec
+          pretium vulputate sapien nec sagittis. Vulputate dignissim suspendisse
+          in est ante in nibh. Enim diam vulputate ut pharetra sit amet.
+          Tincidunt dui ut ornare lectus sit amet est placerat in. Placerat orci
+          nulla pellentesque dignissim. Semper auctor neque vitae tempus. Ac
+          auctor augue mauris augue neque. Purus in massa tempor nec feugiat
+          nisl pretium. Porta nibh venenatis cras sed felis eget velit. Lorem
+          donec massa sapien faucibus. Sit amet cursus sit amet dictum. Eu non
+          diam phasellus vestibulum lorem sed risus ultricies tristique. Elit
+          sed vulputate mi sit. Non curabitur gravida arcu ac tortor dignissim.
+          Neque ornare aenean euismod elementum nisi quis eleifend. Ac tortor
+          dignissim convallis aenean. Id cursus metus aliquam eleifend mi in
+          nulla. Sed pulvinar proin gravida hendrerit. Amet mauris commodo quis
+          imperdiet massa tincidunt nunc pulvinar. Leo urna molestie at
+          elementum eu facilisis sed odio morbi. Cursus sit amet dictum sit amet
+          justo donec enim. Molestie nunc non blandit massa enim nec dui nunc.
+          Elementum eu facilisis sed odio morbi quis commodo odio. Viverra
+          tellus in hac habitasse. Fermentum posuere urna nec tincidunt praesent
+          semper feugiat. Est placerat in egestas erat imperdiet.Semper auctor
+          neque vitae tempus. Ac auctor augue mauris augue neque. Purus in massa
+          tempor nec feugiat nisl pretium. Porta nibh venenatis cras sed felis
+          eget velit. Lorem donec massa sapien faucibus. Sit amet cursus sit
+          amet dictum. Eu non diam phasellus vestibulum lorem sed risus
+          ultricies tristique. Elit sed vulputate mi sit. Non curabitur gravida
+          arcu ac tortor dignissim. Neque ornare aenean euismod elementum nisi
+          quis eleifend. Ac tortor dignissim convallis aenean. Id cursus metus
+          aliquam eleifend mi in nulla. Sed pulvinar proin gravida hendrerit.
+          Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar. Id
+          cursus metus aliquam eleifend mi in nulla.
+        </p>
+      </div>
+    </section>
   );
 };
-export default AboutUs;
+
+export default About;

@@ -1,11 +1,14 @@
 import { Fragment, useState } from "react";
-import { Routes, Route } from "react-router-dom"; // Import Routes
+import { Route } from "react-router-dom";
 import Header from "./Components/Layout/Header/Header";
 import Footer from "./Components/Layout/Footer/Footer";
 import Cart from "./Components/Cart/Cart";
 import CartProvider from "./Components/Store/CartProvider";
 import AboutUs from "./Components/Pages/AboutUs";
-import Home from "./Components/Pages/Home";
+import Home2 from "./Components/Pages/Home2";
+import Store from "./Components/Pages/Store";
+import ContactUs from "./Components/Pages/ContactUs";
+import ProductDetail from "./Components/Pages/ProductDetails";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -22,10 +25,24 @@ function App() {
       <CartProvider>
         {cartIsShown && <Cart onClose={HideCartHandler} />}
         <Header onShowCart={ShowCartHandler} />
-        <Routes> {/* Wrap your routes with <Routes> */}
-          <Route path="/AboutUs" element={<AboutUs />} />
-          <Route path="/Home" element={<Home />} />
-        </Routes>
+
+        <Route path="/AboutUs">
+          <AboutUs />
+        </Route>
+
+        <Route path="/Home">
+          <Home2 />
+        </Route>
+        <Route path="/Store">
+          <Store />
+        </Route>
+        <Route path="/ContactUs">
+          <ContactUs />
+        </Route>
+        <Route path="/product/:productDetails">
+          <ProductDetail />
+        </Route>
+
         <Footer />
       </CartProvider>
     </Fragment>

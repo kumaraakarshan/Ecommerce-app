@@ -8,3 +8,9 @@
   margin: 20px 0 0 5rem;
   
 }
+.icon{
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  padding-right: 20px;
+}

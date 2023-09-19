@@ -23,29 +23,33 @@ const Home = () => {
           </Col>
         </Row>
       </div>
-      <h2 className="classes.h2"> Tours </h2>
+      <h2 className="h2"> Tours </h2>
 
       <section>
         <div className="para">
           <p>
             {" "}
-            JUL16 MUMBAI.SUN TOE ALBUM{" "} 
+            JUL16 MUMBAI.SUN TOE ALBUM{" "}
             <button className="button1">BUY TICKETS</button>{" "}
           </p>
-          <hr/>
+          <hr />
           <p>
             {" "}
             TAJ ALBUM,MUMBAI <button className="button1">BUY TICKETS</button>
-          </p><hr/>
+          </p>
+          <hr />
           <p>
             ROZ ALBUM,PUNE <button className="button1">BUY TICKETS</button>
-          </p><hr/>
+          </p>
+          <hr />
           <p>
             MIMMI ALBUM,MUMBAI <button className="button1">BUY TICKETS</button>
-          </p><hr/>
+          </p>
+          <hr />
           <p>
             LIGGI ALBUM,MUMBAI <button className="button1">BUY TICKETS</button>
-          </p><hr/>
+          </p>
+          <hr />
           <p>
             ROSHNI ALBUM,MUMBAI <button className="button1">BUY TICKETS</button>
           </p>
