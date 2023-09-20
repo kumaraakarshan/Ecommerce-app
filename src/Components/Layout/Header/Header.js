@@ -10,7 +10,7 @@ const Header = (props) => {
   const history = useHistory();
   const logoutHandler = () => {
     authCtx.logout();
-    history.replace('/auth')
+    history.replace('/Login')
   }
   return (
     <Fragment>
@@ -18,7 +18,7 @@ const Header = (props) => {
         
       <HeaderCartButton onClick={props.onShowCart} />
       <NavBar />
-      <button onClick= {logoutHandler}> Logout </button>
+      <button onClick= {logoutHandler} className={classes.logoutButton}> Logout </button>
         <h1 className={classes.h1}>The Generics</h1>
       </header>
       

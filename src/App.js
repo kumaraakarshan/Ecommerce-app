@@ -30,6 +30,9 @@ function App() {
         {cartIsShown && <Cart onClose={HideCartHandler} />}
         <Header onShowCart={ShowCartHandler} />
      
+        <Route path="/" exact>
+          <Redirect to="/Login" />
+        </Route>
 
         <Route path="/AboutUs">
           <AboutUs />
@@ -40,7 +43,9 @@ function App() {
         </Route>
 
         <Route path="/Store">
-          <Store />
+        {authCtx.isLoggedIn && <Store />}
+           {!authCtx.isLoggedIn && <Redirect to='/Login'/>}
+          
         </Route>
 
         <Route path="/ContactUs">

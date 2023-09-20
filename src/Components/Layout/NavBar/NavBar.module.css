@@ -1,5 +1,6 @@
 .navbar {
   text-align: center;
+  text-decoration: none;
 
 }
 
@@ -8,21 +9,14 @@
   margin: 20px 0 0 5rem;
   
 }
+
+
+
 .icon{
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-  padding-right: 20px;
-}
-
-
-.logoutButton
-{
-  background-color: black;
-  color: white;
-  border: 2px solid blue;
-  padding: 5px;
-  border-radius: 11px;
-  margin-left: 35px;
-
+   
+    text-decoration: none;
+    color: #00adb5;
+    text-decoration: none;
+    color: #eeeeee;
+  
 }
