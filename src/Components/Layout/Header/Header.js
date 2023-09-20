@@ -5,9 +5,15 @@ import classes from "./Header.module.css";
 import HeaderCartButton from "./HeaderCartButton";
 import LoginContext from "../../Store/LoginContext";
 
+
 const Header = (props) => {
+  
   const authCtx = useContext(LoginContext);
+
   const history = useHistory();
+
+
+  
   const logoutHandler = () => {
     authCtx.logout();
     history.replace('/Login')

@@ -8,6 +8,7 @@
   margin-bottom: 50px;
   box-shadow: 0 0 7px rgb(7, 2, 2);
   border: none;
+  margin-top: 5rem;
 }
 
 .form label {
@@ -57,4 +58,5 @@
   font-size: 60px;
   text-align: center;
   font-family: 'Times New Roman', Times, serif;
+  
 }

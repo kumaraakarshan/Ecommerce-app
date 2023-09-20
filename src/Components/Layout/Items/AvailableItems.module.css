@@ -1,14 +1,11 @@
-.ul {
-  display: flex;
+.title{
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
 }
-
-.button {
+.content{
   display: flex;
-  padding: 15px;
-  background-color: #777;
-  border: none;
-  border-radius: 7px;
-  margin: auto;
-  cursor: pointer;
-  font-weight: bolder;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
 }

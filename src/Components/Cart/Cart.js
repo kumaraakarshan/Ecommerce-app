@@ -1,73 +1,58 @@
 import React from "react";
 import Modal from "../UI/Modal";
 import classes from "./Cart.module.css";
-import CartItem from "./CartItem";
+import { useContext } from "react";
+import CartContext from "../Store/cart-context";
+import CartItems from "./CartItem";
 
 const Cart = (props) => {
-  const cartElements = (
-    <ul>
-      {[
-        {
-          title: "Colors",
+  const cartCtx = useContext(CartContext);
 
-          price: 100,
+  let totalAmount = 0;
+  cartCtx?.items?.forEach((items) => {
+    totalAmount = totalAmount + items.price;
+  });
 
-          imageUrl:
-            "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-
-          quantity: 2,
-        },
-
-        {
-          title: "Black and white Colors",
-
-          price: 50,
-
-          imageUrl:
-            "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-
-          quantity: 3,
-        },
-
-        {
-          title: "Yellow and Black Colors",
-
-          price: 70,
-
-          imageUrl:
-            "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
-
-          quantity: 1,
-        },
-      ].map((item) => (
-        <div>
-          <img src= {item.imageUrl } alt="Icon" className={classes.img}></img>
-          <span className={classes.title}>{item.title}</span> 
-          
-          {item.price} 
-          <span>{item.quantity}</span>
-          <button className={classes.cancel}>Remove</button>
-        </div>
+  const cartItems = (
+    <ul className={classes["cart-items"]}>
+      {cartCtx?.items?.map((item) => (
+        <li className={classes.coloumn}>
+          <CartItems
+            key={item.id}
+            id={item.id}
+            img={item.image}
+            title={item.title}
+            quantity={item.quantity}
+            price={item.price}
+            _id={item._id}
+          />
+        </li>
       ))}
     </ul>
   );
+
+  const purchaseHandler = () => {
+    cartCtx.emptyCart();
+  };
 
   return (
     <Modal onClose={props.onClose}>
       <section className={classes.section}>
         <h2 className={classes.cart}> CART </h2>
-        <button className={classes.remove} onClick={props.onClose}>
-          Remove
-        </button>
       </section>
       <div className={classes.div}>
-        <span className={classes.span}> ITEM </span>
-        <span className={classes.span}> PRICE </span>
-        <span className={classes.span}> QUANTITY </span>
+        <span className={classes.item}> ITEM </span>
+        <span className={classes.item}> PRICE </span>
+        <span className={classes.item}> QUANTITY </span>
       </div>
-      {cartElements}
-      <h2 className={classes.h2}> Total Rs.300 </h2>
+      {cartItems}
+      <h2 className={classes.h2}> Total Rs.{totalAmount} </h2>
+
+      <button className={classes.button} onClick={purchaseHandler}>
+        PURCHASE{" "}
+      </button>
     </Modal>
   );
 };
+
 export default Cart;

@@ -1,7 +1,31 @@
-.music{
-    text-align: center;
-    font-family: "Metal Mania";
-    text-align: center;
+.img{
+    margin-top: 80px;
+    padding: 229px;
+    transition: transform .2s;
+}
+
+.img:hover {
+    transform: scale(1.5); 
+  }
+
+.title {
+    margin-left: 50px;
+}
+
+.section {
+    display: flex;
+   margin-top: 3rem;
+   margin-right: 24rem;
+}
+
+.reviews {
     padding: 20px;
-    font-size: 30px;
+}
+
+.img2{
+    margin-top: 60px;
+    padding: 30px;
+    width: 150px;
+    height: 150px;
+   
 }

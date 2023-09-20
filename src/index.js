@@ -9,6 +9,7 @@ import { LoginContextProvider } from './Components/Store/LoginContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <LoginContextProvider>
+    
   <BrowserRouter>
     <App/>
   </BrowserRouter>

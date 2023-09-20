@@ -1,43 +1,85 @@
-import { useReducer } from "react";
+import { useState } from "react";
 import CartContext from "./cart-context";
+import axios from "axios";
 
-const defaultCartState = {
-  items: [],
-  total: 0,
-};
-
-const cartReducer = (state, action) => {
-  if (action.type === "ADD") {
-    const updatedItems=state.items.concat(action.item)
-    const updatedTotal=state.total+action.item.price*action.item.amount
-    return{
-        items:updatedItems,
-        total:updatedTotal
-    }
+export const CartProvider = (props) => {
+  if (!localStorage.getItem("email")) {
+    localStorage.setItem("email", "");
   }
+  let emailId = localStorage.getItem("email").replace(".", "").replace("@", "");
 
-  return defaultCartState;
-};
+  const [items, setItems] = useState([]);
 
-const CartProvider = (props) => {
-  const [cartState, dispatchCartAction] = useReducer(
-    cartReducer,
-    defaultCartState
-  );
-
-  const addItemCartHandler = (item) => {
-    dispatchCartAction({ type: "ADD", item: item });
+  const addItemToCartHandler = (item) => {
+    let arr = [...items];
+    let flag = false;
+    items.forEach((element, index) => {
+      console.log(items);
+      if (element.id === item.id) {
+        arr[index].quantity =
+          Number(item.quantity) + Number(arr[index].quantity);
+        flag = true;
+        console.log(arr[index]);
+        let { _id, ...updatedData } = arr[index];
+        axios
+          .put(
+            `https://crudcrud.com/api/1fd3ffa8dc6f4bf09f52cede24f9cef4/cart${emailId}/${arr[index]._id}`,
+            updatedData
+          )
+          .then((res) => {
+            console.log(res.data, "Successfull");
+          })
+          .catch((error) => {
+            alert(error);
+          });
+      }
+    });
+    if (flag === false) {
+      axios
+        .post(
+          `https://crudcrud.com/api/1fd3ffa8dc6f4bf09f52cede24f9cef4/cart${emailId}`,
+          { ...item, quantity: 1 }
+        )
+        .then((res) => {
+          arr.push(res.data);
+          console.log(res.data, "Successfull");
+          setItems(arr);
+        })
+        .catch((error) => {
+          alert(error);
+        });
+    }
   };
 
-  const removeItemCartHandler = (id) => {
-    dispatchCartAction({ type: "REMOVE", id: id });
+  const removeItemHandler = (id) => {
+    let itemToRemove = items.findIndex((item) => item.id === id);
+    console.log(itemToRemove);
+    const i = [...items];
+    const updatedItems = i.splice(itemToRemove, 1);
+    console.log(itemToRemove, i, updatedItems);
+    setItems(i);
+  };
+
+  const emptyCartHandler = () => {
+    setItems([]);
+  };
+
+  const initializeCartHandler = (items) => {
+    setItems(items);
+  };
+
+  const mapIDHandler = (id) => {
+    items.id = id;
   };
 
   const cartContext = {
-    items: cartState.items,
-    total: cartState.total,
-    addItem: addItemCartHandler,
-    removeItem: removeItemCartHandler,
+    items: items,
+    totalAmount: 0,
+    addItem: addItemToCartHandler,
+    removeItem: removeItemHandler,
+    emptyCart: emptyCartHandler,
+    initilizeCart: initializeCartHandler,
+    mapID: mapIDHandler,
   };
   return (
     <CartContext.Provider value={cartContext}>
@@ -45,4 +87,5 @@ const CartProvider = (props) => {
     </CartContext.Provider>
   );
 };
+
 export default CartProvider;

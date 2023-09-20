@@ -49,6 +49,7 @@
   .btn {
     background-color: rgb(161, 157, 157);
     cursor: pointer;
+    margin-top: 3rem;
   }
   
   .divheader {

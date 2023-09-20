@@ -1,8 +1,12 @@
 .navbar {
   text-align: center;
   text-decoration: none;
-
+  margin-top: 1rem;
+  font-size: 20px;
 }
+ 
+
+
 
 .a {
   color: white;
@@ -14,8 +18,7 @@
 
 .icon{
    
-    text-decoration: none;
-    color: #00adb5;
+  margin-left: 1rem;
     text-decoration: none;
     color: #eeeeee;
   

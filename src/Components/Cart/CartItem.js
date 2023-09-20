@@ -1,57 +1,33 @@
-import React, { Fragment } from "react";
-import classes from './CartItem.module.css'
+import React, { useContext } from "react";
+import classes from "./CartItem.module.css";
+import axios from "axios";
+import CartContext from "../Store/cart-context";
 
 const CartItems = (props) => {
-  const cartElements = [
-    {
-      title: "Colors",
+  let emailId = localStorage.getItem("email").replace(".", "").replace("@", "");
+  const cartCntx = useContext(CartContext);
 
-      price: 100,
-
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-
-      quantity: 2,
-    },
-
-    {
-      title: "Black and white Colors",
-
-      price: 50,
-
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-
-      quantity: 3,
-    },
-
-    {
-      title: "Yellow and Black Colors",
-
-      price: 70,
-
-      imageUrl:
-        "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
-
-      quantity: 1,
-    },
-  ].map((item)=><li>{item.name}</li>)
+  const onRemoveHandler = (event) => {
+    cartCntx.removeItem(props.id);
+    const id = props._id;
+    
+    axios.delete(
+      `https://crudcrud.com/api/1fd3ffa8dc6f4bf09f52cede24f9cef4/cart${emailId}/${id}`
+    );
+  };
 
   return (
-    <li className={classes['cart-item']}>
-      <div>
-        <h2>{props.name}</h2>
-        <div className={classes.summary}>
-          <span className={classes.price}>{props.price}</span>
-          <span className={classes.amount}>x {props.amount}</span>
-        </div>
-      </div>
-      <div className={classes.actions}>
-        <button onClick={props.onRemove}>-</button>
-        <button onClick={props.onAdd}>+</button>
-      </div>
-    </li>
+    <ul>
+      <li id={`cart-item-${props.id}`}>
+        <h2 className={classes.title}>{props.title}</h2>
+        <img src={props.img} alt="icon" className={classes.img}></img>
+        <span className={classes.price}> Rs.{props.price}</span>
+        <span className={classes.quantity}> x {props.quantity}</span>
+        <button className={classes.button} onClick={onRemoveHandler}>
+          -
+        </button>
+      </li>
+    </ul>
   );
 };
-
 export default CartItems;

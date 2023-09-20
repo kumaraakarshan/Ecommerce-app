@@ -14,6 +14,7 @@ const LoginForm = () => {
 
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setLoading] = useState(false);
+
   const switchAuthModeHandler = () => {
     setIsLogin((prevState) => !prevState);
   };
@@ -22,6 +23,8 @@ const LoginForm = () => {
     event.preventDefault();
     const enteredEmail = emailInputRef.current.value;
     const enteredPswd = passwordInputRef.current.value;
+
+    localStorage.setItem("email", enteredEmail);
 
     setLoading(true);
     let url;
