@@ -37,7 +37,7 @@ function App() {
 
   useEffect(() => {
     if (!email) return;
-     axios.get(`https://crudcrud.com/api/1fd3ffa8dc6f4bf09f52cede24f9cef4/cart${email}`).then((res) => {
+     axios.get(`https://crudcrud.com/api/70c791f9f0db4a73af933d9d5fe36326/cart${email}`).then((res) => {
        const data= (res.data)
        for (const key in data) {
          const item = data[key];
@@ -57,7 +57,7 @@ function App() {
         {cartIsShown && <Cart onClose={HideCartHandler} />}
         <Header onShowCart={ShowCartHandler} />
         
-        <Switch>
+        
         <Route path="/" exact>
           <Redirect to="/Login" />
         </Route>
@@ -88,7 +88,7 @@ function App() {
         <LoginForm/>
         {!authCtx.isLoggedIn && <Redirect to='/Login'/>}
         </Route>
-        </Switch>
+        
 
         <Footer />
       </CartProvider>

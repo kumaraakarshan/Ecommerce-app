@@ -56,7 +56,7 @@ const AvailableItems = (props) => {
   useEffect(() => {
     axios
       .get(
-        `https://crudcrud.com/api/1fd3ffa8dc6f4bf09f52cede24f9cef4/cart${emailId}`
+        `https://crudcrud.com/api/70c791f9f0db4a73af933d9d5fe36326/cart${emailId}`
       )
       .then((res) => {
         cartCtx.initilizeCart(res.data);
@@ -66,17 +66,17 @@ const AvailableItems = (props) => {
   return (
     <div className={classes.content}>
      
-      <ul>
+      <ul className={classes.ul}>
         {productsArr.map((item) => {
           return (
             <ProductItems
-              key={Math.random()}
-              id={item.id}
-              title={item.title}
-              price={item.price}
-              image={item.imageUrl}
-              quantity={1}
-              _id={item._id}
+            key={Math.random()}
+            id={item.id}
+            title={item.title}
+            price={item.price}
+            image={item.imageUrl}
+            quantity={1}
+            _id={item._id}
             />
           );
         })}

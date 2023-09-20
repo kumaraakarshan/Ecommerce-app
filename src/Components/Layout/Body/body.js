@@ -5,7 +5,7 @@ import classes from './Body.module.css'
 
 const Body=(props)=>{
     return<div className={classes.body}>
-        <h1 className={classes.music}>Music</h1>
+      
         <AvailableItems/>
       
         </div>
