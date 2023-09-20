@@ -8,15 +8,3 @@
 .price{
  font-size: larger;
 }
-.img{
-    box-shadow: 5px 5px 10px #000;
-    height: 300px;
-    margin: auto;
-    overflow: hidden;
-    width: 300px;
-    transition: transform 2s;
-    
-}
-.img:hover{
-    transform: scale(105%);
-}

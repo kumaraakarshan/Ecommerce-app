@@ -16,9 +16,9 @@ const Cart = (props) => {
   const cartItems = (
     <ul className={classes["cart-items"]}>
       {cartCtx?.items?.map((item) => (
-        <li >
+        <li className={classes.coloumn}>
           <CartItems
-            key={item._id}
+            key={item.id}
             id={item.id}
             img={item.image}
             title={item.title}
@@ -49,7 +49,7 @@ const Cart = (props) => {
       <h2 className={classes.h2}> Total Rs.{totalAmount} </h2>
 
       <button className={classes.button} onClick={purchaseHandler}>
-       BUY{" "}
+        PURCHASE{" "}
       </button>
     </Modal>
   );

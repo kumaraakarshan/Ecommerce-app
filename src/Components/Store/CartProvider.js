@@ -23,7 +23,7 @@ export const CartProvider = (props) => {
         let { _id, ...updatedData } = arr[index];
         axios
           .put(
-            `https://crudcrud.com/api/70c791f9f0db4a73af933d9d5fe36326/cart${emailId}/${arr[index]._id}`,
+            `https://crudcrud.com/api/1fd3ffa8dc6f4bf09f52cede24f9cef4/cart${emailId}/${arr[index]._id}`,
             updatedData
           )
           .then((res) => {
@@ -37,7 +37,7 @@ export const CartProvider = (props) => {
     if (flag === false) {
       axios
         .post(
-          `https://crudcrud.com/api/e57fa112d8c84ffbb063c274c941ca37/cart${emailId}`,
+          `https://crudcrud.com/api/1fd3ffa8dc6f4bf09f52cede24f9cef4/cart${emailId}`,
           { ...item, quantity: 1 }
         )
         .then((res) => {
