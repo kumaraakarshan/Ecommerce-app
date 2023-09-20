@@ -14,3 +14,15 @@
   cursor: pointer;
   padding-right: 20px;
 }
+
+
+.logoutButton
+{
+  background-color: black;
+  color: white;
+  border: 2px solid blue;
+  padding: 5px;
+  border-radius: 11px;
+  margin-left: 35px;
+
+}

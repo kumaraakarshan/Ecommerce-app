@@ -1,7 +1,11 @@
 import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
+
 import classes from "./NavBar.module.css";
+
 const NavBar = (props) => {
+ 
+ 
   return (
     <Fragment>
       <nav className={classes.navbar}>
@@ -14,9 +18,13 @@ const NavBar = (props) => {
         <NavLink activeClassName={classes.icon} to="/AboutUs">
           ABOUT
         </NavLink>
-        <NavLink activeClassName={classes.icon} to="/ContactUs">
-          Contact Us
+        <NavLink activeClassName={classes.icon} to="/Login">
+          LOGIN
         </NavLink>
+        <NavLink activeClassName={classes.icon} to="/ContactUs">
+          CONTACT US
+        </NavLink>
+       
       </nav>
     </Fragment>
   );
